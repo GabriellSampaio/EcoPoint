@@ -111,16 +111,7 @@
 
             <div class="sidebar-divider"></div>
 
-            <a href="{{ route('publico.pontos.index') }}" class="sidebar-link" target="_blank" title="Ver no Mapa Público">
-                <span class="sidebar-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
-                    </svg>
-                </span>
-                <span class="sidebar-label">Mapa Público</span>
-            </a>
-
-            <a href="{{ route('publico.home') }}" class="sidebar-link" target="_blank" title="Página Inicial do EcoPoints">
+            <a href="{{ route('publico.home') }}#local" class="sidebar-link" target="_blank" title="Página Inicial do EcoPoints">
                 <span class="sidebar-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
