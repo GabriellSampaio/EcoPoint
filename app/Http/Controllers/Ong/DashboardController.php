@@ -38,7 +38,7 @@ class DashboardController extends Controller
             ]);
         }
 
-        // 1. Cards de Métricas Principais (estilo Admin)
+        // Métricas principais
         $totalPontos = $ong->pontosDeColeta()->count();
         $pontosAtivos = $ong->pontosDeColeta()->where('ativo', true)->count();
         $pontosInativos = $ong->pontosDeColeta()->where('ativo', false)->count();
@@ -60,13 +60,12 @@ class DashboardController extends Controller
         $solicitacoesAprovadas = $ong->solicitacoesAlteracao()->where('status', 'aprovada')->count();
         $solicitacoesRecusadas = $ong->solicitacoesAlteracao()->where('status', 'recusada')->count();
 
-        // 2. Gráfico 1: Status Operacional dos Pontos (Doughnut)
+        // Gráficos da dashboard
         $graficoStatus = [
             'ativos' => $pontosAtivos,
             'inativos' => $pontosInativos,
         ];
 
-        // 3. Gráfico 2: Pontos de Coleta por Cidade (Bar)
         $graficoCidades = $ong->pontosDeColeta()
             ->selectRaw('cidade, COUNT(*) as total')
             ->whereNotNull('cidade')
@@ -81,7 +80,6 @@ class DashboardController extends Controller
             ])
             ->toArray();
 
-        // 4. Gráfico 3: Materiais Acadêmicos Aceitos nos Pontos da ONG (Horizontal Bar)
         $graficoMateriais = MaterialAceito::withCount(['pontosDeColeta' => function ($q) use ($ong) {
                 $q->where('ong_id', $ong->id);
             }])
@@ -94,14 +92,12 @@ class DashboardController extends Controller
             ->values()
             ->toArray();
 
-        // 5. Gráfico 4: Status das Solicitações Cadastrais da ONG (Doughnut)
         $graficoSolicitacoes = [
             'pendentes' => $solicitacoesPendentes,
             'aprovadas' => $solicitacoesAprovadas,
             'recusadas' => $solicitacoesRecusadas,
         ];
 
-        // 6. Gráfico 5: Evolução Temporal de Cadastro de Pontos da ONG (Line / Area)
         $driver = DB::connection()->getDriverName();
         $dateFormat = match ($driver) {
             'pgsql'  => "TO_CHAR(created_at, 'YYYY-MM')",
@@ -120,7 +116,7 @@ class DashboardController extends Controller
             ])
             ->toArray();
 
-        // 7. Pontos recentes para listagem rápida
+        // Pontos recentes
         $ultimosPontos = $ong->pontosDeColeta()
             ->with('materiaisAceitos')
             ->latest()

@@ -72,11 +72,13 @@
         @yield('conteudo')
     </main>
 
+    @unless(View::hasSection('semFooter'))
     <footer>
         <p>EcoPoint &copy; {{ date('Y') }} - Sistema de Mapeamento de Pontos de Coleta de Livros e Apostilas Acadêmicas.</p>
 
         
     </footer>
+    @endunless
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

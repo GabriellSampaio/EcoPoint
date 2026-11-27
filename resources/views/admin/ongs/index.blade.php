@@ -8,9 +8,7 @@
 
 @section('conteudo')
 <div class="ongs-index-container">
-    {{-- ============================================================
-         HEADER CARD
-         ============================================================ --}}
+    {{-- HEADER --}}
     <div class="ongs-header-card">
         <div>
             <span class="badge badge-admin">Perfil: Administrador</span>
@@ -33,9 +31,7 @@
         </div>
     </div>
 
-    {{-- ============================================================
-         TABELA DE ONGS
-         ============================================================ --}}
+    {{-- TABELA DE ONGS --}}
     <div class="ongs-table-card">
         <div class="table-responsive">
             <table class="ongs-table">
@@ -88,7 +84,6 @@
                             </td>
                             <td class="th-actions">
                                 <div class="actions-group">
-                                    {{-- Botão que abre o Modal de Detalhes da Instituição --}}
                                     <button type="button" 
                                             class="btn-action btn-action-detalhes" 
                                             title="Visualizar detalhes completos da ONG"
@@ -112,7 +107,6 @@
                                         Detalhes
                                     </button>
 
-                                    {{-- Botão que dispara o Modal de Alterar Status --}}
                                     <button type="button" 
                                             class="btn-action btn-action-toggle" 
                                             title="{{ $ong->ativo ? 'Desativar ONG' : 'Ativar ONG' }}"
@@ -120,7 +114,6 @@
                                         {{ $ong->ativo ? 'Desativar' : 'Ativar' }}
                                     </button>
 
-                                    {{-- Botão que dispara o Modal de Exclusão --}}
                                     <button type="button" 
                                             class="btn-action btn-action-delete" 
                                             title="Excluir Instituição"
@@ -148,9 +141,7 @@
             </table>
         </div>
 
-        {{-- ============================================================
-             PAGINAÇÃO ESTILIZADA
-             ============================================================ --}}
+        {{-- PAGINAÇÃO --}}
         @if ($ongs->hasPages())
             <div class="pagination-wrapper">
                 {{ $ongs->links() }}
@@ -159,9 +150,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL DE ALTERAR STATUS (COR VERDE INSTITUCIONAL)
-     ============================================================ --}}
+{{-- MODAL STATUS --}}
 <div id="modalStatusOng" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalStatusTitulo">
         <div class="vibe-modal-icon">
@@ -193,9 +182,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL DE EXCLUIR (ÍCONE CIRCULAR COM "X" CONFORME IMAGEM)
-     ============================================================ --}}
+{{-- MODAL EXCLUSÃO --}}
 <div id="modalExcluirOng" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalExcluirTitulo">
         <div class="vibe-modal-icon">
@@ -224,9 +211,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL DE DETALHES COMPLETOS DA ONG
-     ============================================================ --}}
+{{-- MODAL DETALHES --}}
 <div id="modalDetalhesOng" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog vibe-modal-dialog-large" role="dialog" aria-modal="true" aria-labelledby="modalDetalhesTitulo">
         <button type="button" class="vibe-modal-close-btn" onclick="fecharModalDetalhes()" title="Fechar Modal">
@@ -252,7 +237,6 @@
 
         <div class="vibe-modal-body">
             <div class="detalhes-grid">
-                {{-- Bloco 1: Identificação --}}
                 <div class="detalhes-block">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -272,7 +256,6 @@
                     </div>
                 </div>
 
-                {{-- Bloco 2: Contato e Acesso --}}
                 <div class="detalhes-block">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -292,7 +275,6 @@
                     </div>
                 </div>
 
-                {{-- Bloco 3: Localização --}}
                 <div class="detalhes-block full-width">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -308,7 +290,6 @@
                     </div>
                 </div>
 
-                {{-- Bloco 4: Operação e Histórico --}}
                 <div class="detalhes-block full-width">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -340,9 +321,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL DE EDITAR ONG (NA PRÓPRIA PÁGINA COM CAMPOS ESSENCIAIS)
-     ============================================================ --}}
+{{-- MODAL EDIÇÃO --}}
 <div id="modalEditarOng" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog vibe-modal-dialog-large" role="dialog" aria-modal="true" aria-labelledby="modalEditarTitulo">
         <div class="vibe-modal-icon">
@@ -360,61 +339,51 @@
             @method('PUT')
 
             <div class="vibe-form-grid">
-                {{-- Nome --}}
                 <div class="vibe-field-group vibe-field-full">
                     <label for="editNome" class="vibe-label">Nome da Instituição <span class="required">*</span></label>
                     <input type="text" id="editNome" name="nome" class="vibe-input" required>
                 </div>
 
-                {{-- E-mail de Login --}}
                 <div class="vibe-field-group">
                     <label for="editEmail" class="vibe-label">E-mail de Login <span class="required">*</span></label>
                     <input type="email" id="editEmail" name="email" class="vibe-input" required>
                 </div>
 
-                {{-- CNPJ --}}
                 <div class="vibe-field-group">
                     <label for="editCnpj" class="vibe-label">CNPJ</label>
                     <input type="text" id="editCnpj" name="cnpj" class="vibe-input" placeholder="00.000.000/0000-00">
                 </div>
 
-                {{-- Telefone --}}
                 <div class="vibe-field-group">
                     <label for="editTelefone" class="vibe-label">Telefone</label>
                     <input type="text" id="editTelefone" name="telefone" class="vibe-input" placeholder="(00) 00000-0000">
                 </div>
 
-                {{-- E-mail de Contato --}}
                 <div class="vibe-field-group">
                     <label for="editEmailContato" class="vibe-label">E-mail de Contato</label>
                     <input type="email" id="editEmailContato" name="email_contato" class="vibe-input" placeholder="contato@ong.org">
                 </div>
 
-                {{-- Cidade --}}
                 <div class="vibe-field-group">
                     <label for="editCidade" class="vibe-label">Cidade</label>
                     <input type="text" id="editCidade" name="cidade" class="vibe-input">
                 </div>
 
-                {{-- Estado --}}
                 <div class="vibe-field-group">
                     <label for="editEstado" class="vibe-label">Estado (UF)</label>
                     <input type="text" id="editEstado" name="estado" maxlength="2" class="vibe-input" placeholder="SP">
                 </div>
 
-                {{-- Endereço --}}
                 <div class="vibe-field-group vibe-field-full">
                     <label for="editEndereco" class="vibe-label">Endereço Completo</label>
                     <input type="text" id="editEndereco" name="endereco" class="vibe-input" placeholder="Rua, número, bairro">
                 </div>
 
-                {{-- Senha Opcional --}}
                 <div class="vibe-field-group">
                     <label for="editSenha" class="vibe-label">Nova Senha</label>
                     <input type="password" id="editSenha" name="senha" class="vibe-input" placeholder="Deixe em branco p/ manter">
                 </div>
 
-                {{-- Confirmação de Senha --}}
                 <div class="vibe-field-group">
                     <label for="editSenhaConfirmation" class="vibe-label">Confirmar Nova Senha</label>
                     <input type="password" id="editSenhaConfirmation" name="senha_confirmation" class="vibe-input" placeholder="Repita a nova senha">
@@ -436,7 +405,7 @@
 
 @push('scripts')
 <script>
-    // MODAL DE STATUS
+    // Modal: Status
     function abrirModalStatus(id, nome, acao, actionUrl) {
         const modal = document.getElementById('modalStatusOng');
         const nomeEl = document.getElementById('modalStatusNome');
@@ -463,7 +432,7 @@
         }
     }
 
-    // MODAL DE EXCLUSÃO
+    // Modal: Exclusão
     function abrirModalExclusao(id, nome, actionUrl) {
         const modal = document.getElementById('modalExcluirOng');
         const nomeEl = document.getElementById('modalNomeOng');
@@ -485,7 +454,7 @@
         }
     }
 
-    // MODAL DE DETALHES COMPLETOS
+    // Modal: Detalhes
     function abrirModalDetalhes(btn) {
         const modal = document.getElementById('modalDetalhesOng');
         if (!modal) return;
@@ -526,7 +495,7 @@
         }
     }
 
-    // MODAL DE EDITAR (NA PRÓPRIA PÁGINA)
+    // Modal: Edição
     function abrirModalEditar(btn) {
         const modal = document.getElementById('modalEditarOng');
         const form = document.getElementById('formEditarOng');
@@ -560,7 +529,7 @@
         }
     }
 
-    // Fechar ao clicar no backdrop (fora da caixa branca)
+    // Fechar no backdrop
     document.addEventListener('click', function(e) {
         const modalStatus = document.getElementById('modalStatusOng');
         const modalExcluir = document.getElementById('modalExcluirOng');
@@ -573,7 +542,7 @@
         if (modalDetalhes && e.target === modalDetalhes) fecharModalDetalhes();
     });
 
-    // Fechar ao teclar ESC
+    // Fechar no ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             fecharModalStatus();

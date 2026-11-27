@@ -1,7 +1,4 @@
-/* ============================================================
-   EcoPoint — Admin Solicitações de Alteração
-   public/css/admin/solicitacoes.css
-   ============================================================ */
+/* SOLICITAÇÕES - ADMIN */
 
 .solicitacoes-admin-container {
     max-width: 1280px;
@@ -9,7 +6,7 @@
     padding-bottom: 3rem;
 }
 
-/* Header Card */
+/* HEADER */
 .solicitacoes-header-card {
     background: linear-gradient(135deg, #1d3d1a 0%, #2f6929 100%);
     border-radius: 14px;
@@ -60,7 +57,7 @@
     background: rgba(255, 255, 255, 0.25);
 }
 
-/* Alertas */
+/* ALERTAS */
 .alert-box {
     display: flex;
     align-items: flex-start;
@@ -83,7 +80,7 @@
     color: #9b1c1c;
 }
 
-/* Filtros */
+/* FILTROS */
 .filters-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -157,7 +154,7 @@
     color: #ffffff;
 }
 
-/* Tabela */
+/* TABELA */
 .solicitacoes-table-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -295,7 +292,7 @@
     border-radius: 0 4px 4px 0;
 }
 
-/* Status */
+/* STATUS */
 .status-pill {
     display: inline-flex;
     align-items: center;
@@ -337,7 +334,7 @@
     background: #ef4444;
 }
 
-/* Botões de Ação */
+/* AÇÕES */
 .actions-buttons-row {
     display: flex;
     align-items: center;
@@ -402,7 +399,7 @@
     color: #742a2a;
 }
 
-/* Modais Customizados */
+/* MODAIS */
 .custom-modal-overlay {
     position: fixed;
     top: 0;

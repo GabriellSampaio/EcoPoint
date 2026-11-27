@@ -1,6 +1,4 @@
-{{-- ============================================================
-     MODAL DE EDITAR PONTO DE COLETA (PALETA TERROSA)
-     ============================================================ --}}
+{{-- MODAL EDITAR PONTO --}}
 <div id="modalEditarPonto" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog vibe-modal-dialog-large" role="dialog" aria-modal="true" aria-labelledby="modalEditarPontoTitulo">
         <button type="button" class="vibe-modal-close-btn" onclick="fecharModalEditarPonto()" title="Fechar">
@@ -27,67 +25,56 @@
 
             <div class="vibe-modal-body">
                 <div class="edit-ponto-grid">
-                    {{-- Nome --}}
                     <div class="edit-field-group edit-field-full">
                         <label for="editPontoNome" class="edit-label">Nome do Ponto de Coleta <span class="edit-req">*</span></label>
                         <input type="text" id="editPontoNome" name="nome" class="edit-input" required placeholder="Ex: Biblioteca Central">
                     </div>
 
-                    {{-- CEP --}}
                     <div class="edit-field-group">
                         <label for="editPontoCep" class="edit-label">CEP</label>
                         <input type="text" id="editPontoCep" name="cep" class="edit-input" maxlength="9" placeholder="00000-000">
                     </div>
 
-                    {{-- Telefone --}}
                     <div class="edit-field-group">
                         <label for="editPontoTelefone" class="edit-label">Telefone de Contato</label>
                         <input type="text" id="editPontoTelefone" name="telefone_contato" class="edit-input" maxlength="20" placeholder="(00) 00000-0000">
                     </div>
 
-                    {{-- Endereço --}}
                     <div class="edit-field-group edit-field-wide">
                         <label for="editPontoEndereco" class="edit-label">Endereço / Logradouro <span class="edit-req">*</span></label>
                         <input type="text" id="editPontoEndereco" name="endereco" class="edit-input" required placeholder="Rua, Avenida, etc.">
                     </div>
 
-                    {{-- Número --}}
                     <div class="edit-field-group">
                         <label for="editPontoNumero" class="edit-label">Número</label>
                         <input type="text" id="editPontoNumero" name="numero" class="edit-input" maxlength="20" placeholder="Ex: 120">
                     </div>
 
-                    {{-- Complemento --}}
                     <div class="edit-field-group">
                         <label for="editPontoComplemento" class="edit-label">Complemento</label>
                         <input type="text" id="editPontoComplemento" name="complemento" class="edit-input" placeholder="Sala, Bloco, etc.">
                     </div>
 
-                    {{-- Bairro --}}
                     <div class="edit-field-group">
                         <label for="editPontoBairro" class="edit-label">Bairro</label>
                         <input type="text" id="editPontoBairro" name="bairro" class="edit-input" placeholder="Bairro">
                     </div>
 
-                    {{-- Cidade --}}
                     <div class="edit-field-group">
                         <label for="editPontoCidade" class="edit-label">Cidade <span class="edit-req">*</span></label>
                         <input type="text" id="editPontoCidade" name="cidade" class="edit-input" required placeholder="Cidade">
                     </div>
 
-                    {{-- Estado --}}
                     <div class="edit-field-group">
                         <label for="editPontoEstado" class="edit-label">Estado (UF) <span class="edit-req">*</span></label>
                         <input type="text" id="editPontoEstado" name="estado" class="edit-input" required maxlength="2" style="text-transform: uppercase;" placeholder="SP">
                     </div>
 
-                    {{-- Horário de Funcionamento --}}
                     <div class="edit-field-group edit-field-full">
                         <label for="editPontoHorario" class="edit-label">Horário de Funcionamento</label>
                         <input type="text" id="editPontoHorario" name="horario_funcionamento" class="edit-input" placeholder="Ex: Segunda a Sexta, 08h às 18h">
                     </div>
 
-                    {{-- Materiais Aceitos --}}
                     <div class="edit-field-group edit-field-full">
                         <span class="edit-label">Materiais Acadêmicos Aceitos</span>
                         <div class="edit-materiais-grid">
@@ -100,13 +87,11 @@
                         </div>
                     </div>
 
-                    {{-- Descrição --}}
                     <div class="edit-field-group edit-field-full">
                         <label for="editPontoDescricao" class="edit-label">Instruções e Observações</label>
                         <textarea id="editPontoDescricao" name="descricao" rows="3" class="edit-input edit-textarea" placeholder="Pontos de referência ou orientações aos doadores..."></textarea>
                     </div>
 
-                    {{-- Status Ativo --}}
                     <div class="edit-field-group edit-field-full">
                         <label class="edit-status-check">
                             <input type="checkbox" id="editPontoAtivo" name="ativo" value="1">

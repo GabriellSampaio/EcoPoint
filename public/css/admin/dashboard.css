@@ -1,15 +1,11 @@
-/* ========================================================
-   1. CONTAINER PRINCIPAL
-   ======================================================== */
+/* CONTAINER */
 .admin-dashboard-container {
     max-width: 1380px;
     margin: 0 auto;
 }
 
 
-/* ========================================================
-   2. BANNER DE BOAS-VINDAS (VERDE FLORESTA PROFUNDO)
-   ======================================================== */
+/* BANNER DE BOAS-VINDAS */
 .dashboard-header-card {
     position: relative;
     background: linear-gradient(130deg, var(--eco-forest-deep) 0%, var(--eco-green-forest) 100%);
@@ -141,9 +137,7 @@
 }
 
 
-/* ========================================================
-   3. TÍTULOS DE SEÇÃO
-   ======================================================== */
+/* TÍTULOS DE SEÇÃO */
 .section-title {
     font-family: var(--font-display);
     font-size: 1.22rem;
@@ -157,9 +151,7 @@
 }
 
 
-/* ========================================================
-   4. GRID DE MÉTRICAS (CARDS)
-   ======================================================== */
+/* MÉTRICAS */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -256,9 +248,7 @@
 }
 
 
-/* ========================================================
-   5. SEÇÃO DO MAPA DO BRASIL - COBERTURA REGIONAL
-   ======================================================== */
+/* MAPA DO BRASIL */
 .mapa-brasil-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-soft);
@@ -495,9 +485,7 @@
 }
 
 
-/* ========================================================
-   6. GRID DE GRÁFICOS (CHARTS)
-   ======================================================== */
+/* GRÁFICOS */
 .charts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -552,9 +540,7 @@
 }
 
 
-/* ========================================================
-   7. GRID DE MÓDULOS DE AÇÃO
-   ======================================================== */
+/* MÓDULOS DE AÇÃO */
 .modules-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -626,9 +612,7 @@
 }
 
 
-/* ========================================================
-   8. RESPONSIVIDADE REFINADA (TABLET, LAPTOP E MOBILE)
-   ======================================================== */
+/* RESPONSIVIDADE */
 @media (max-width: 1200px) {
     .charts-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -1,14 +1,4 @@
-/* ============================================================
-   EcoPoint — ONG Dashboard
-   public/css/ong/dashboard.css
-   Paleta Terrosa (Imagem 2):
-   #3B2A1F - Café Escuro Profundo
-   #6F4E37 - Marrom Café Aveludado
-   #B08968 - Caramelo / Camelo Quente
-   #D4B996 - Bege Amêndoa / Areia
-   #EDE3D4 - Creme Quente / Aveia
-   #FFF9F0 - Marfim Suave / Branco Quente
-   ============================================================ */
+/* DASHBOARD ONG */
 
 .ong-dashboard-container {
     max-width: 1380px;
@@ -16,9 +6,7 @@
     padding-bottom: 2.5rem;
 }
 
-/* ========================================================
-   1. BANNER DE BOAS-VINDAS DA ONG
-   ======================================================== */
+/* BANNER DE BOAS-VINDAS */
 .dashboard-header-card {
     position: relative;
     background: linear-gradient(135deg, #3B2A1F 0%, #6F4E37 60%, #8C6549 100%);
@@ -126,9 +114,7 @@
     text-decoration: none;
 }
 
-/* ========================================================
-   2. TÍTULOS DE SEÇÃO
-   ======================================================== */
+/* TÍTULOS DE SEÇÃO */
 .section-title {
     font-family: var(--font-display);
     font-size: 1.25rem;
@@ -150,9 +136,7 @@
     border-radius: 4px;
 }
 
-/* ========================================================
-   3. GRID DE MÉTRICAS (SOBREPOSTO E LIMPO COMO O ADMIN)
-   ======================================================== */
+/* MÉTRICAS */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -233,9 +217,7 @@
     font-weight: 400;
 }
 
-/* ========================================================
-   4. GRIDS DE GRÁFICOS
-   ======================================================== */
+/* GRÁFICOS */
 .charts-grid-top {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -316,9 +298,7 @@
     padding: 1rem;
 }
 
-/* ========================================================
-   5. PONTOS RECENTES (TABELA)
-   ======================================================== */
+/* PONTOS RECENTES */
 .recent-pontos-card {
     background: #FFFFFF;
     border: 1px solid #EDE3D4;

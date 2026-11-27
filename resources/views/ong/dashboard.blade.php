@@ -10,9 +10,7 @@
 @section('conteudo')
 <div class="ong-dashboard-container">
 
-    {{-- ============================================================
-         BANNER DE BOAS-VINDAS DA ONG
-         ============================================================ --}}
+    {{-- BANNER DE BOAS-VINDAS --}}
     <div class="dashboard-header-card">
         <div class="dashboard-header-content">
             <div>
@@ -32,15 +30,12 @@
         </div>
     </div>
 
-    {{-- ============================================================
-         SEÇÃO 1 — MÉTRICAS DA INSTITUIÇÃO (CARDS IGUAIS AO DO ADMIN)
-         ============================================================ --}}
+    {{-- MÉTRICAS --}}
     <div class="section-title">
         <span>Métricas da Sua Organização</span>
     </div>
 
     <div class="metrics-grid">
-        {{-- Card 1: Total de Pontos --}}
         <div class="metric-card">
             <div class="metric-card-top">
                 <span class="metric-card-title">Pontos de Coleta</span>
@@ -49,7 +44,6 @@
             <div class="metric-card-footer">Total de locais cadastrados</div>
         </div>
 
-        {{-- Card 2: Pontos Ativos --}}
         <div class="metric-card">
             <div class="metric-card-top">
                 <span class="metric-card-title">Pontos Ativos</span>
@@ -58,7 +52,6 @@
             <div class="metric-card-footer">Locais em operação no mapa</div>
         </div>
 
-        {{-- Card 3: Pontos Inativos --}}
         <div class="metric-card">
             <div class="metric-card-top">
                 <span class="metric-card-title">Pontos Inativos</span>
@@ -67,7 +60,6 @@
             <div class="metric-card-footer">Temporariamente pausados</div>
         </div>
 
-        {{-- Card 4: Cidades Atendidas --}}
         <div class="metric-card">
             <div class="metric-card-top">
                 <span class="metric-card-title">Cidades Atendidas</span>
@@ -76,7 +68,6 @@
             <div class="metric-card-footer">Municípios com cobertura</div>
         </div>
 
-        {{-- Card 5: Categorias de Materiais --}}
         <div class="metric-card">
             <div class="metric-card-top">
                 <span class="metric-card-title">Categorias de Materiais</span>
@@ -85,7 +76,6 @@
             <div class="metric-card-footer">Tipos de acervo arrecadados</div>
         </div>
 
-        {{-- Card 6: Solicitações Cadastrais --}}
         <div class="metric-card">
             <div class="metric-card-top">
                 <span class="metric-card-title">Solicitações de Alteração</span>
@@ -98,16 +88,12 @@
         </div>
     </div>
 
-    {{-- ============================================================
-         SEÇÃO 2 — GRÁFICOS ANALÍTICOS (5 GRÁFICOS COM A PALETA TERROSA)
-         ============================================================ --}}
+    {{-- GRÁFICOS --}}
     <div class="section-title">
         <span>Desempenho e Distribuição Operacional</span>
     </div>
 
-    {{-- Linha 1: 2 Gráficos (Status dos Pontos + Pontos por Cidade) --}}
     <div class="charts-grid-top">
-        {{-- Gráfico 1: Status Operacional dos Pontos (Doughnut) --}}
         <div class="chart-card">
             <div class="chart-card-header">
                 <div>
@@ -126,7 +112,6 @@
             </div>
         </div>
 
-        {{-- Gráfico 2: Pontos de Coleta por Cidade (Bar) --}}
         <div class="chart-card">
             <div class="chart-card-header">
                 <div>
@@ -146,9 +131,7 @@
         </div>
     </div>
 
-    {{-- Linha 2: 3 Gráficos (Materiais + Solicitações + Evolução Temporal) --}}
     <div class="charts-grid-bottom">
-        {{-- Gráfico 3: Materiais Mais Aceitos (Horizontal Bar) --}}
         <div class="chart-card">
             <div class="chart-card-header">
                 <div>
@@ -167,7 +150,6 @@
             </div>
         </div>
 
-        {{-- Gráfico 4: Status das Solicitações Cadastrais (Doughnut) --}}
         <div class="chart-card">
             <div class="chart-card-header">
                 <div>
@@ -186,7 +168,6 @@
             </div>
         </div>
 
-        {{-- Gráfico 5: Evolução Temporal de Cadastro de Pontos (Line/Area) --}}
         <div class="chart-card">
             <div class="chart-card-header">
                 <div>
@@ -206,9 +187,7 @@
         </div>
     </div>
 
-    {{-- ============================================================
-         SEÇÃO 3 — PONTOS DE COLETA RECENTES
-         ============================================================ --}}
+    {{-- PONTOS RECENTES --}}
     <div class="recent-pontos-card">
         <div class="recent-pontos-header">
             <h2 class="recent-pontos-title">Pontos de Coleta Recentes</h2>
@@ -305,11 +284,10 @@
 @include('ong.pontos._modal_editar')
 
 @push('scripts')
-{{-- Chart.js para Renderização dos 5 Gráficos com Paleta Terrosa --}}
+{{-- SCRIPTS DE GRÁFICOS --}}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    // PALETA TERROSA (IMAGEM 2)
     const corCoffeeDark = '#3B2A1F';
     const corCoffeeRich = '#6F4E37';
     const corCaramel    = '#B08968';
@@ -317,7 +295,7 @@
     const corCream      = '#EDE3D4';
     const corIvory      = '#FFF9F0';
 
-    // 1. GRÁFICO 1: STATUS DOS PONTOS (DOUGHNUT)
+    // Gráfico: Status dos Pontos
     @if($totalPontos > 0)
     const ctxStatus = document.getElementById('chartStatusPontos');
     if (ctxStatus) {
@@ -352,7 +330,7 @@
     }
     @endif
 
-    // 2. GRÁFICO 2: PONTOS POR CIDADE (BAR VERTICAL)
+    // Gráfico: Pontos por Cidade
     @if(!empty($graficoCidades))
     const ctxCidades = document.getElementById('chartCidadesPontos');
     if (ctxCidades) {
@@ -400,7 +378,7 @@
     }
     @endif
 
-    // 3. GRÁFICO 3: MATERIAIS ACEITOS (HORIZONTAL BAR)
+    // Gráfico: Materiais Aceitos
     @if(!empty($graficoMateriais) && collect($graficoMateriais)->sum('total') > 0)
     const ctxMateriais = document.getElementById('chartMateriais');
     if (ctxMateriais) {
@@ -444,7 +422,7 @@
     }
     @endif
 
-    // 4. GRÁFICO 4: SOLICITAÇÕES CADASTRAIS (DOUGHNUT)
+    // Gráfico: Solicitações
     @if($totalSolicitacoes > 0)
     const ctxSolicitacoes = document.getElementById('chartSolicitacoes');
     if (ctxSolicitacoes) {
@@ -483,7 +461,7 @@
     }
     @endif
 
-    // 5. GRÁFICO 5: EVOLUÇÃO TEMPORAL DE PONTOS (LINE / AREA)
+    // Gráfico: Evolução Mensal
     @if(!empty($graficoPontosMes))
     const ctxPontosMes = document.getElementById('chartPontosMes');
     if (ctxPontosMes) {

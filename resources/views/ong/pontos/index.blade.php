@@ -9,9 +9,7 @@
 @section('conteudo')
 <div class="pontos-container">
 
-    {{-- ============================================================
-         HEADER CARD
-         ============================================================ --}}
+    {{-- HEADER --}}
     <div class="pontos-header-card">
         <div>
             <span class="badge badge-ong">Perfil: Instituição / ONG</span>
@@ -32,9 +30,7 @@
         </div>
     </div>
 
-    {{-- ============================================================
-         BARRA DE BUSCA E FILTROS RÁPIDOS
-         ============================================================ --}}
+    {{-- BUSCA E FILTROS --}}
     <div class="pontos-search-bar">
         <form method="GET" action="{{ route('ong.pontos.index') }}" class="search-form">
             <div class="search-input-wrapper">
@@ -77,7 +73,7 @@
         </form>
     </div>
 
-    {{-- MENSAGEM FLASH DE SUCESSO --}}
+    {{-- ALERTA --}}
     @if(session('success'))
         <div class="alert-success-banner" role="alert">
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -91,9 +87,7 @@
         </div>
     @endif
 
-    {{-- ============================================================
-         TABELA DE PONTOS DE COLETA
-         ============================================================ --}}
+    {{-- TABELA DE PONTOS --}}
     <div class="pontos-table-card">
         <div class="table-responsive">
             <table class="pontos-table">
@@ -109,7 +103,6 @@
                 <tbody>
                     @forelse ($pontos as $ponto)
                         <tr>
-                            {{-- Ponto de Coleta --}}
                             <td>
                                 <div class="ponto-nome-cell">{{ $ponto->nome }}</div>
                                 @if ($ponto->horario_funcionamento)
@@ -126,7 +119,6 @@
                                 @endif
                             </td>
 
-                            {{-- Localização --}}
                             <td>
                                 <div class="ponto-endereco-text">
                                     {{ $ponto->endereco }}{{ $ponto->numero ? ', ' . $ponto->numero : '' }}
@@ -142,7 +134,6 @@
                                 </div>
                             </td>
 
-                            {{-- Materiais Aceitos --}}
                             <td>
                                 <div class="materiais-badges">
                                     @forelse ($ponto->materiaisAceitos as $material)
@@ -153,7 +144,6 @@
                                 </div>
                             </td>
 
-                            {{-- Status com Trigger para Modal --}}
                             <td>
                                 <button
                                     type="button"
@@ -170,10 +160,8 @@
                                 </button>
                             </td>
 
-                            {{-- Ações --}}
                             <td>
                                 <div class="actions-group">
-                                    {{-- Botão Detalhes --}}
                                     <button
                                         type="button"
                                         class="btn-action btn-action-detalhes"
@@ -202,7 +190,6 @@
                                         Detalhes
                                     </button>
 
-                                    {{-- Botão Editar (Abre Modal) --}}
                                     <button
                                         type="button"
                                         class="btn-action btn-action-edit"
@@ -230,7 +217,6 @@
                                         Editar
                                     </button>
 
-                                    {{-- Botão Status --}}
                                     <button
                                         type="button"
                                         class="btn-action btn-action-status"
@@ -248,7 +234,6 @@
                                         Status
                                     </button>
 
-                                    {{-- Botão Excluir --}}
                                     <button
                                         type="button"
                                         class="btn-action btn-action-delete"
@@ -300,7 +285,7 @@
             </table>
         </div>
 
-        {{-- PAGINAÇÃO ELEGANTE --}}
+        {{-- PAGINAÇÃO --}}
         @if ($pontos->hasPages())
             <div class="vibe-pagination-wrapper">
                 {{ $pontos->links() }}
@@ -311,9 +296,7 @@
 
 @include('ong.pontos._modal_editar')
 
-{{-- ============================================================
-     MODAL DE DETALHES DO PONTO DE COLETA
-     ============================================================ --}}
+{{-- MODAL DETALHES --}}
 <div id="modalDetalhesPonto" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog vibe-modal-dialog-large" role="dialog" aria-modal="true" aria-labelledby="modalDetalhesPontoTitulo">
         <button type="button" class="vibe-modal-close-btn" onclick="fecharModalDetalhes()" title="Fechar">
@@ -336,7 +319,6 @@
 
         <div class="vibe-modal-body">
             <div class="detalhes-grid">
-                {{-- Bloco 1: Identificação & Status --}}
                 <div class="detalhes-block">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -356,7 +338,6 @@
                     </div>
                 </div>
 
-                {{-- Bloco 2: Atendimento e Contato --}}
                 <div class="detalhes-block">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -372,7 +353,6 @@
                     </div>
                 </div>
 
-                {{-- Bloco 3: Endereço Completo --}}
                 <div class="detalhes-block full-width">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -388,7 +368,6 @@
                     </div>
                 </div>
 
-                {{-- Bloco 4: Materiais Aceitos --}}
                 <div class="detalhes-block full-width">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
@@ -397,7 +376,6 @@
                     <div id="pontoDetalheMateriais" class="materiais-badges" style="margin-top: 0.35rem;"></div>
                 </div>
 
-                {{-- Bloco 5: Descrição Adicional --}}
                 <div class="detalhes-block full-width">
                     <div class="detalhes-block-title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
@@ -416,9 +394,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL DE ALTERAR STATUS (ATIVAR / DESATIVAR)
-     ============================================================ --}}
+{{-- MODAL STATUS --}}
 <div id="modalStatusPonto" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalStatusTitulo">
         <div class="vibe-modal-icon">
@@ -448,9 +424,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL DE CONFIRMAÇÃO DE EXCLUSÃO (COM ÍCONE OFICIAL)
-     ============================================================ --}}
+{{-- MODAL EXCLUSÃO --}}
 <div id="modalExcluirPonto" class="vibe-modal-overlay" style="display: none;">
     <div class="vibe-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalExcluirTitulo">
         <div class="vibe-modal-icon">
@@ -484,7 +458,7 @@
 
 @push('scripts')
 <script>
-    // MODAL DE DETALHES
+    // Modal: Detalhes
     function abrirModalDetalhes(btn) {
         const modal = document.getElementById('modalDetalhesPonto');
         if (!modal) return;
@@ -537,7 +511,7 @@
         }
     }
 
-    // MODAL DE ALTERAR STATUS
+    // Modal: Status
     function abrirModalStatus(btn) {
         const modal = document.getElementById('modalStatusPonto');
         const form = document.getElementById('formStatusPonto');
@@ -574,7 +548,7 @@
         }
     }
 
-    // MODAL DE CONFIRMAÇÃO DE EXCLUSÃO
+    // Modal: Exclusão
     function abrirModalExclusao(btn) {
         const modal = document.getElementById('modalExcluirPonto');
         const form = document.getElementById('formExcluirPonto');
@@ -595,7 +569,7 @@
         }
     }
 
-    // Fechar ao clicar fora (backdrop)
+    // Fechar no backdrop
     document.addEventListener('click', function(e) {
         const modalDetalhes = document.getElementById('modalDetalhesPonto');
         const modalStatus = document.getElementById('modalStatusPonto');
@@ -606,7 +580,7 @@
         if (modalExcluir && e.target === modalExcluir) fecharModalExclusao();
     });
 
-    // Fechar ao teclar ESC
+    // Fechar no ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             fecharModalDetalhes();

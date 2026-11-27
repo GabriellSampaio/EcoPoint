@@ -9,7 +9,7 @@
 @section('conteudo')
 <div class="solicitacoes-admin-container">
 
-    {{-- Header Card --}}
+    {{-- HEADER --}}
     <div class="solicitacoes-header-card">
         <div class="solicitacoes-header-content">
             <div>
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    {{-- Alertas / Feedback --}}
+    {{-- ALERTAS --}}
     @if (session('sucesso'))
         <div class="alert-box alert-success" role="alert">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -49,7 +49,7 @@
         </div>
     @endif
 
-    {{-- Filtros por Status --}}
+    {{-- FILTROS --}}
     <div class="filters-card">
         <div class="filters-nav">
             <a href="{{ route('admin.solicitacoes.index', ['status' => 'pendente']) }}" 
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    {{-- Tabela de Solicitações --}}
+    {{-- TABELA DE SOLICITAÇÕES --}}
     <div class="solicitacoes-table-card">
         <div class="table-responsive">
             <table class="solicitacoes-table">
@@ -225,9 +225,7 @@
 
 </div>
 
-{{-- ============================================================
-     MODAL — APROVAR SOLICITAÇÃO
-     ============================================================ --}}
+{{-- MODAL APROVAÇÃO --}}
 <div id="modalAprovar" class="custom-modal-overlay" style="display: none;">
     <div class="custom-modal-dialog">
         <div class="modal-icon-header green-bg">
@@ -260,9 +258,7 @@
     </div>
 </div>
 
-{{-- ============================================================
-     MODAL — RECUSAR SOLICITAÇÃO (COM MOTIVO)
-     ============================================================ --}}
+{{-- MODAL RECUSA --}}
 <div id="modalRecusar" class="custom-modal-overlay" style="display: none;">
     <div class="custom-modal-dialog">
         <div class="modal-icon-header red-bg">

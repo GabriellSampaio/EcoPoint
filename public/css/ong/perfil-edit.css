@@ -1,7 +1,4 @@
-/* ============================================================
-   EcoPoint — ONG Perfil Edit
-   public/css/ong/perfil-edit.css
-   ============================================================ */
+/* PERFIL ONG */
 
 .perfil-container {
     max-width: 960px;
@@ -9,7 +6,7 @@
     padding-bottom: 3rem;
 }
 
-/* Header Card */
+/* HEADER */
 .perfil-header-card {
     background: linear-gradient(135deg, #3B2A1F 0%, #6F4E37 65%, #8C6549 100%);
     border-radius: 18px;
@@ -90,7 +87,7 @@
     background-color: #e74c3c;
 }
 
-/* Alertas */
+/* ALERTAS */
 .alert-box {
     display: flex;
     align-items: flex-start;
@@ -119,7 +116,7 @@
     padding: 0;
 }
 
-/* Cards de Seção */
+/* SEÇÕES */
 .perfil-card {
     background: #ffffff;
     border: 1px solid #EDE3D4;
@@ -178,7 +175,7 @@
     line-height: 1.45;
 }
 
-/* Grid de Informações Controladas */
+/* INFORMAÇÕES CONTROLADAS */
 .controlled-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -256,7 +253,7 @@
     line-height: 1.4;
 }
 
-/* Badges de bloqueio e status */
+/* BADGES */
 .badge-lock, .badge-immutable {
     display: inline-flex;
     align-items: center;
@@ -280,7 +277,7 @@
     border: 1px solid #cbd5e1;
 }
 
-/* Aviso de solicitação pendente */
+/* AVISO PENDENTE */
 .pending-notice {
     margin-top: 0.75rem;
     background: #fffbeb;
@@ -335,7 +332,7 @@
     border-color: #6F4E37;
 }
 
-/* Formulário Direto */
+/* FORMULÁRIO DIRETO */
 .form-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -439,7 +436,7 @@
     background-color: #3B2A1F;
 }
 
-/* Tabela de Solicitações */
+/* TABELA DE SOLICITAÇÕES */
 .table-responsive {
     overflow-x: auto;
 }
@@ -528,7 +525,7 @@
     border-radius: 4px;
 }
 
-/* Badges de Status */
+/* STATUS */
 .badge-status {
     display: inline-flex;
     align-items: center;
@@ -628,7 +625,7 @@
     margin: 0;
 }
 
-/* Modais Customizados */
+/* MODAIS */
 .custom-modal-backdrop {
     position: fixed;
     top: 0;

@@ -1,13 +1,5 @@
 
-/* ========================================================
-   PALETA TERROSA DA ONG (BASEADA NA IMAGEM 2)
-   #3B2A1F - Café Escuro Profundo
-   #6F4E37 - Marrom Café Aveludado
-   #B08968 - Caramelo / Camelo Quente
-   #D4B996 - Bege Amêndoa / Areia
-   #EDE3D4 - Creme Quente / Aveia
-   #FFF9F0 - Marfim Suave / Branco Quente
-   ======================================================== */
+/* TEMA DA ONG */
 
 .ong-body {
     --eco-forest-deep: #3B2A1F;
@@ -38,7 +30,7 @@
     line-height: 1.6;
 }
 
-/* SIDEBAR E TOPBAR MOBILE ESPECÍFICOS DA ONG */
+/* SIDEBAR E TOPBAR */
 .ong-body .admin-sidebar {
     background: linear-gradient(180deg, #3B2A1F 0%, #251B14 100%);
     border-right: 1px solid rgba(212, 185, 150, 0.18);
@@ -91,7 +83,7 @@
     color: #D4B996;
 }
 
-/* BADGES DA ONG */
+/* BADGES */
 .ong-body .badge {
     display: inline-block;
     padding: 0.28rem 0.65rem;
@@ -119,7 +111,7 @@
     margin: 2px 3px 2px 0;
 }
 
-/* STATUS PILLS */
+/* STATUS */
 .ong-body .status-pill {
     display: inline-flex;
     align-items: center;
