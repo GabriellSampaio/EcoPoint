@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
-/* Estlização geral site */
+/* Estilização geral site */
 /* Reset */
 * {
     box-sizing: border-box;
@@ -42,7 +42,7 @@ body {
 header {
     background: #D4EEAD;
     color: rgb(255, 255, 255);
-    padding: 0 0;
+    padding: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
@@ -123,7 +123,6 @@ header .nav-container nav .nav-btn-panel {
     margin-left: 2rem;
     width: 15.6rem;
     height: 2.6rem;
-    padding: 50px;
     background: #80654A;
     color: rgb(221, 221, 221);
     padding: 0.35rem 0.65rem;
@@ -206,9 +205,7 @@ footer {
     color: #f7fafc;
     border-top: 1px solid #e2e8f0;
     background: #80654A;
-
     padding: 2rem 12rem;
-
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -217,56 +214,52 @@ footer {
 .footer-content {
     display: flex;
     gap: 50px;
-
     justify-content: center;
     text-align: left;
+    flex-wrap: wrap; /* Permite que os blocos quebrem linha se necessário */
 }
 
 .sobre-nos-footer, .ecopoints-footer, .areas-restritas-footer,
-.fale-conosco-footer, .academico-footer{
+.fale-conosco-footer, .academico-footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
     width: 200px;
 }
 
 .sobre-nos-footer p, .ecopoints-footer ul, .areas-restritas-footer ul,
-.fale-conosco-footer ul, .academico-footer p{
+.fale-conosco-footer ul, .academico-footer p {
     font-size: 0.8rem;
 }
 
-.sobre-nos-footer p, footer ul, footer li, footer a{
+.sobre-nos-footer p, footer ul, footer li, footer a {
     list-style: none;
     text-decoration: none;
     border-bottom: none;
 }
 
-.sobre-nos-footer{
+.sobre-nos-footer {
     width: 250px;
 }
 
-.sobre-nos-footer img{
+.sobre-nos-footer img {
     width: 140.6px;
     height: 40px;
-
     object-fit: cover;
     object-position: center;
-
     padding: 0;
     margin: 0;
 }
 
-.sobre-nos-footer p{
+.sobre-nos-footer p {
     width: 100%;
     overflow-wrap: break-word;
     word-break: break-word;
 }
 
-.sobre-nos-footer a{
+.sobre-nos-footer a {
     font-size: 0.9rem;
     font-weight: 600;
-
     text-decoration: none;
     color: #F4F4F4;
 }
@@ -275,21 +268,21 @@ footer {
     width: 150px;
 }
 
-.ecopoints-footer ul li a, .areas-restritas-footer ul li a{
+.ecopoints-footer ul li a, .areas-restritas-footer ul li a {
     color: #f7fafc;
 }
 
-.fale-conosco-footer ul li i{
+.fale-conosco-footer ul li i {
     margin-right: 10px;
 }
 
 .fale-conosco-footer .fa-phone,
-.fale-conosco-footer .fa-envelope{
+.fale-conosco-footer .fa-envelope {
     font-size: 0.75rem;
     width: 0.85rem;
 }
 
-footer .copyright-txt{
+footer .copyright-txt {
     text-align: center;
     font-size: 0.7rem;
 }
@@ -335,6 +328,7 @@ footer .copyright-txt{
     font-size: 0.95rem;
 }
 
+/* ---- Responsividade (Mobile) ---- */
 @media (max-width: 1000px) {
     header .nav-container {
         justify-content: space-between;
@@ -381,6 +375,30 @@ footer .copyright-txt{
         transform: translateY(0);
         z-index: 1;
     }
+
+    /* Responsividade do rodapé para telas menores */
+    footer {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .sobre-nos-footer, .ecopoints-footer, .areas-restritas-footer,
+    .fale-conosco-footer, .academico-footer {
+        width: 100%;
+        align-items: center;
+    }
+
+    .fale-conosco-footer ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @keyframes pula {
@@ -392,8 +410,4 @@ footer .copyright-txt{
         transform: translateY(0);
         font-size: 17px;
     }
-}
-
-main {
-    flex: 1;
 }
